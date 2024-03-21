@@ -35,7 +35,6 @@ export class TaskService {
 
   updateTaskReminder(task: Task){
     const url = `${this.apiUrl}/${task.id}`
-    console.log(url,"toggle service");
     return this.http.put<Task>(url,task,httpOptions)
   }
 }

@@ -19,7 +19,6 @@ export class TasksComponent {
   }
 
   deleteTask(task: Task){
-    console.log("Deleting",task);
     this.taskService
       .deleteTask(task)
       .subscribe(()=>{
@@ -28,7 +27,6 @@ export class TasksComponent {
     
   }
   toggleReminder(task: Task){
-    console.log("toggled",task);
     task.reminder = !task.reminder
     this.taskService
       .updateTaskReminder(task)
