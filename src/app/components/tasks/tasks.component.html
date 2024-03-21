@@ -1,1 +1,5 @@
-<app-task-item *ngFor="let singletask of tasks" [task] = "singletask"></app-task-item>
+<app-task-item 
+*ngFor="let singletask of tasks" 
+[task] = "singletask"
+(onDeleteTask)="deleteTask(singletask)" 
+></app-task-item>
