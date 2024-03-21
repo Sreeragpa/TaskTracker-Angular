@@ -1,3 +1,4 @@
+<app-add-task (onAddTask)="addTask($event)"></app-add-task>
 <app-task-item 
 *ngFor="let singletask of tasks" 
 [task] = "singletask"

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
+import { Task } from '../../Task';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-add-task',
@@ -7,4 +9,30 @@ import { Component } from '@angular/core';
 })
 export class AddTaskComponent {
 
+  @Output() onAddTask: EventEmitter<Task> = new EventEmitter()
+
+  text: string = '';
+  day: string = '';
+  reminder: boolean = false;
+
+  onSubmit(){
+    if(!this.text){
+      alert("Please add a Task");
+      return;
+    }
+
+    const newTask: Task = {
+      text: this.text,
+      day: this.day,
+      reminder: this.reminder
+    }
+
+    this.onAddTask.emit(newTask);
+
+    this.text = ''
+    this.day = ''
+    this.reminder = false
+  }
+
+ 
 }
